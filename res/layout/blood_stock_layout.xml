@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/ABloodGroupLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:padding="10dp" >
+
+        <ProgressBar
+            android:id="@+id/AProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/ABloodGroup" />
+
+        <TextView
+            android:id="@+id/ABloodGroup"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="A" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/BBloodGroupLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ABloodGroupLayout"
+        android:padding="10dp" >
+
+        <ProgressBar
+            android:id="@+id/BProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/ABloodGroup" />
+
+        <TextView
+            android:id="@+id/ABloodGroup"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="B" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/OBloodGroupLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/BBloodGroupLayout"
+        android:padding="10dp" >
+
+        <ProgressBar
+            android:id="@+id/OProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/ABloodGroup" />
+
+        <TextView
+            android:id="@+id/ABloodGroup"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="O" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ABBloodGroupLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OBloodGroupLayout"
+        android:padding="10dp" >
+
+        <ProgressBar
+            android:id="@+id/ABProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/ABloodGroup" />
+
+        <TextView
+            android:id="@+id/ABloodGroup"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="AB" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/notes_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ABBloodGroupLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp"
+        android:text="Medium Text" />
+
+</RelativeLayout>

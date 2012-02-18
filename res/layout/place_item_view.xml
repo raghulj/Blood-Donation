@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/donationPlaceItem"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#cccccc"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:background="#FF002A" >
+
+                <TextView
+                    android:id="@+id/WeekDay"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Feb 13 (Mon)" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#2A55FF"
+                android:padding="3dp"
+                android:text="werwerw" >
+
+                <TextView
+                    android:id="@+id/eventTime"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10am - 4pm" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="7.49"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/eventTitle"
+                style="@style/PlaceTitleFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:text="werwerw" />
+
+            <TextView
+                android:id="@+id/eventLocation"
+                style="@style/LocationFont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:text="werwerw" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

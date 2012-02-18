@@ -1,0 +1,16 @@
+<resources>
+
+    <color name="greenStart">#ff33dd44</color>
+    <color name="greenMid">#ff0A8815</color>
+    <color name="greenEnd">#ff1da130</color>
+    <color name="redStart">#ff0000</color>
+    <color name="redMid">#ff2a00</color>
+    <color name="redEnd">#ff002a</color>
+    <color name="yellowStart">#ffff00</color>
+    <color name="yellowMid">#ffff2a</color>
+    <color name="yellowEnd">#fefe54</color>
+    <color name="orangeStart">#FF7F2A</color>
+    <color name="orangeMid">#FF7F2A</color>
+    <color name="orangeEnd">#FF7F2A</color>
+
+</resources>
