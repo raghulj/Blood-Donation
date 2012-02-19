@@ -34,8 +34,8 @@ public class C2DMMessageReceiver extends BroadcastReceiver {
 			String notificationText) {
 		NotificationManager notificationManager = (NotificationManager) context
 				.getSystemService(Context.NOTIFICATION_SERVICE);
-		Notification notification = new Notification(R.drawable.ic_launcher,
-				"Message received", System.currentTimeMillis());
+		Notification notification = new Notification(R.drawable.bdicon1,
+				"Blood requirement", System.currentTimeMillis());
 		// Hide the notification after its selected
 		notification.flags |= Notification.FLAG_AUTO_CANCEL;
 		notification.defaults |= Notification.DEFAULT_SOUND;

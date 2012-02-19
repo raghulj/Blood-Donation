@@ -2,7 +2,7 @@
 <resources>
 
     <string name="hello">Hello World, DonateBloodActivity!</string>
-    <string name="app_name">DonateBlood</string>
+    <string name="app_name">Donate Blood</string>
      <string name="i_have_donated_today">I have donated Today</string>
 
 </resources>

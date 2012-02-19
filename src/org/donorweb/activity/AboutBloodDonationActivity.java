@@ -17,6 +17,7 @@ public class AboutBloodDonationActivity extends AbstractDonateBloodActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.about_layout);
+		setTitle("About");
 		mAboutText = (TextView) findViewById(R.id.aboutText);
 
 		Spanned spannedContent = Html.fromHtml(mAboutContent);

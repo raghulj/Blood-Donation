@@ -2,42 +2,109 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="#D4D0C8"
     android:orientation="vertical" >
 
-    <ImageButton
-        android:id="@+id/bloodStock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="44dp"
-        android:src="@drawable/ic_launcher" />
-
-    <ImageButton
-        android:id="@+id/donationPlaces"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <RelativeLayout
+        android:id="@+id/donation_places_layout"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
         android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/bloodStock"
-        android:layout_marginLeft="44dp"
-        android:src="@drawable/ic_launcher" />
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="83dp"
+        android:gravity="center" >
 
-    <ImageButton
-        android:id="@+id/idontatedblood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/donationPlaces"
-        android:layout_below="@+id/donationPlaces"
-        android:layout_marginTop="69dp"
-        android:src="@drawable/ic_launcher" />
+        <ImageButton
+            android:id="@+id/donationPlaces"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/bdicon3" />
 
-    <ImageButton
-        android:id="@+id/aboutIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/bloodStock"
-        android:layout_alignTop="@+id/idontatedblood"
-        android:src="@drawable/ic_launcher" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/donationPlaces"
+            android:layout_centerHorizontal="true"
+            android:text="Donation Places"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/donated_blood_layout"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:layout_alignLeft="@+id/donation_places_layout"
+        android:layout_centerVertical="true"
+        android:gravity="center" >
+
+        <ImageButton
+            android:id="@+id/idontatedblood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/bloodStock"
+            android:layout_below="@+id/bloodStock"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/bdicon2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idontatedblood"
+            android:layout_centerHorizontal="true"
+            android:text="Donate Blood"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/about_layout"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:layout_alignTop="@+id/donated_blood_layout"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/donated_blood_layout"
+        android:gravity="center" >
+
+        <ImageButton
+            android:id="@+id/aboutIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/bdicon4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/aboutIcon"
+            android:layout_centerHorizontal="true"
+            android:text="About"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bloodstock_layout"
+        android:layout_width="150dp"
+        android:layout_height="90dp"
+        android:layout_alignLeft="@+id/about_layout"
+        android:layout_alignTop="@+id/donation_places_layout"
+        android:layout_marginLeft="14dp"
+        android:gravity="center" >
+
+        <ImageButton
+            android:id="@+id/bloodStock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/bdicon1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bloodStock"
+            android:layout_centerHorizontal="true"
+            android:text="Blood Stock"
+            android:textColor="#000000" />
+    </RelativeLayout>
 
 </RelativeLayout>

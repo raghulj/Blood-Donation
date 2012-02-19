@@ -1,7 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/relativeLayout1"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:background="#D4D0C8" >
 
     <RelativeLayout
         android:id="@+id/ABloodGroupLayout"
@@ -13,7 +14,7 @@
         <ProgressBar
             android:id="@+id/AProgressBar"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="fill_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/ABloodGroup" />
@@ -23,7 +24,19 @@
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:text="A" />
+            android:text="A"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/ABloodGroupTotal"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/AProgressBar"
+            android:text="400"
+            android:textColor="#000000" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -36,7 +49,7 @@
         <ProgressBar
             android:id="@+id/BProgressBar"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="fill_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/ABloodGroup" />
@@ -46,7 +59,19 @@
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:text="B" />
+            android:text="B"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/BBloodGroupTotal"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/BProgressBar"
+            android:text="400"
+            android:textColor="#000000" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -59,7 +84,7 @@
         <ProgressBar
             android:id="@+id/OProgressBar"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="fill_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/ABloodGroup" />
@@ -69,7 +94,19 @@
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:text="O" />
+            android:text="O"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/OBloodGroupTotal"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/OProgressBar"
+            android:text="400"
+            android:textColor="#000000" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -82,7 +119,7 @@
         <ProgressBar
             android:id="@+id/ABProgressBar"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="fill_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/ABloodGroup" />
@@ -92,7 +129,19 @@
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:text="AB" />
+            android:text="AB"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/ABBloodGroupTotal"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/ABProgressBar"
+            android:text="400"
+            android:textColor="#000000" />
     </RelativeLayout>
 
     <TextView
@@ -102,6 +151,7 @@
         android:layout_below="@+id/ABBloodGroupLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="65dp"
-        android:text="Medium Text" />
+        android:text="Medium Text"
+        android:textColor="#5A5A5A" />
 
 </RelativeLayout>

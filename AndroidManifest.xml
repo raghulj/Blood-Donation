@@ -21,11 +21,12 @@
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <application
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/bdicon1"
         android:label="@string/app_name" >
         <uses-library android:name="com.google.android.maps" />
 
         <activity
+            android:configChanges="orientation|keyboardHidden|keyboard"
             android:label="@string/app_name"
             android:name=".activity.DonateBloodActivity" >
             <intent-filter >
@@ -34,7 +35,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.DonationPlacesActivity" >
+        <activity
+            android:configChanges="orientation|keyboardHidden|keyboard"
+            android:name=".activity.DonationPlacesActivity" >
             <intent-filter >
                 <action android:name="android.intent.action.VIEW" />
 
@@ -46,12 +49,16 @@
 
             <category android:name="android.intent.category.DEFAULT" />
         </activity>
-        <activity android:name=".activity.BloodDonationLocationActivityonActivity" >
+        <activity
+            android:configChanges="orientation|keyboardHidden|keyboard"
+            android:name=".activity.BloodDonationLocationActivityonActivity" >
             <action android:name="android.intent.action.VIEW" />
 
             <category android:name="android.intent.category.DEFAULT" />
         </activity>
-        <activity android:name=".activity.BloodStockActivity" >
+        <activity
+            android:configChanges="orientation|keyboardHidden|keyboard"
+            android:name=".activity.BloodStockActivity" >
             <action android:name="android.intent.action.VIEW" />
 
             <category android:name="android.intent.category.DEFAULT" />
@@ -78,15 +85,23 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".activity.DonateTodayActivity" >
+        <activity
+            android:configChanges="orientation|keyboardHidden|keyboard"
+            android:name=".activity.DonateTodayActivity" >
             <action android:name="android.intent.action.VIEW" />
 
             <category android:name="android.intent.category.DEFAULT" />
         </activity>
-        <activity android:name=".activity.AboutBloodDonationActivity" >
+        <activity
+            android:configChanges="orientation|keyboardHidden|keyboard"
+            android:name=".activity.AboutBloodDonationActivity" >
             <action android:name="android.intent.action.VIEW" />
 
             <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity
+            android:configChanges="orientation|keyboardHidden|keyboard"
+            android:name=".activity.BloodMobileTrackerActivity" >
         </activity>
     </application>
 

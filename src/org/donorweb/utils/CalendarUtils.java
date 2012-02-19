@@ -60,6 +60,37 @@ public class CalendarUtils {
 
 	}
 
+	public static void addThreeMonths(Context context) {
+		Calendar calenderDonatedDate = Calendar.getInstance();
+		long donatedDate = calenderDonatedDate.getTimeInMillis();
+		calenderDonatedDate.add(Calendar.MONTH, 3);
+		long threeMonthsDate = calenderDonatedDate.getTimeInMillis();
+		Utils.storeStringPreference(context,
+				Constants.NEXT_BLOOD_DONATION_DATE, "" + threeMonthsDate);
+		System.out.println(threeMonthsDate);
+	}
+
+	public static int getDateDifference(String threeMonthsDate) {
+
+		if (!threeMonthsDate.equals("")) {
+
+			long threeMonthDateValue = Long.valueOf(threeMonthsDate);
+			Calendar calendarPresent = Calendar.getInstance();
+			long presentDate = calendarPresent.getTimeInMillis();
+			long diff = threeMonthDateValue - presentDate;
+			long diffSeconds = diff / 1000;
+			long diffMinutes = diff / (60 * 1000);
+			long diffHours = diff / (60 * 60 * 1000);
+			int diffDays = (int) (diff / (24 * 60 * 60 * 1000));
+			System.out.println("\nThe Date Difference ");
+			System.out.println("Time in days: " + diffDays + " days.");
+
+			return diffDays;
+		} else {
+			return 0;
+		}
+	}
+
 	public static String getNextDonationDate() {
 		return mNextDonationDay;
 	}

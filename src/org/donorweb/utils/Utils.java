@@ -8,6 +8,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -17,9 +19,15 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.donorweb.R;
 import org.donorweb.activity.AbstractDonateBloodActivity;
 
+import android.app.ProgressDialog;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -195,6 +203,104 @@ public class Utils {
 		SharedPreferences savedSession = context.getSharedPreferences(
 				Constants.SHARED_PREFERENCE_FILE, Context.MODE_PRIVATE);
 		return savedSession.getString(key, null);
+	}
+
+	public static ProgressDialog showProgressDialog(Context context,
+			String message, boolean cancelable) {
+		final ProgressDialog dialog = new ProgressDialog(context);
+		if (message != null && !message.equals("")) {
+			dialog.setMessage(message);
+		} else {
+			dialog.setMessage("  Loading...");
+		}
+
+		dialog.setIndeterminate(true);
+		dialog.setCancelable(cancelable);
+		return dialog;
+	}
+
+	public static String truncate(String value) {
+
+		if (value != null && value.length() > 30) {
+			value = value.substring(0, 30) + "..";
+			return value;
+		}
+		return value;
+	}
+
+	public static void addToCalendar(Context ctx, final String title) {
+		final ContentResolver cr = ctx.getContentResolver();
+		Cursor cursor;
+		Calendar cal = new GregorianCalendar(TimeZone.getTimeZone("GMT"));
+
+		Date dd = new Date("2012/02/19 05:07:00");
+		cal.set(111 + 1900, 01, 25, 12, 30, 00);
+
+		final long dtstart = cal.getTimeInMillis();
+
+		Calendar endCal = new GregorianCalendar(TimeZone.getTimeZone("GMT"));
+		endCal.set(111 + 1900, 01, 25, 18, 30, 00);
+		final long dtend = endCal.getTimeInMillis();
+
+		if (Integer.parseInt(Build.VERSION.SDK) == 8)
+			cursor = cr.query(
+					Uri.parse("content://com.android.calendar/calendars"),
+					new String[] { "_id", "displayname" }, null, null, null);
+		else
+			cursor = cr.query(Uri.parse("content://calendar/calendars"),
+					new String[] { "_id", "displayname" }, null, null, null);
+		if (cursor.moveToFirst()) {
+			final String[] calNames = new String[cursor.getCount()];
+			final int[] calIds = new int[cursor.getCount()];
+			for (int i = 0; i < calNames.length; i++) {
+				calIds[i] = cursor.getInt(0);
+				calNames[i] = cursor.getString(1);
+				cursor.moveToNext();
+			}
+
+			// AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
+			// builder.setSingleChoiceItems(calNames, -1, new
+			// DialogInterface.OnClickListener() {
+			//
+			// @Override
+			// public void onClick(DialogInterface dialog, int which) {
+			ContentValues cv = new ContentValues();
+			cv.put("calendar_id", calIds[0]);
+			cv.put("title", title);
+			cv.put("dtstart", dtstart);
+			cv.put("hasAlarm", 1);
+			cv.put("dtend", dtend);
+
+			Uri newEvent;
+			if (Integer.parseInt(Build.VERSION.SDK) == 8)
+				newEvent = cr.insert(
+						Uri.parse("content://com.android.calendar/events"), cv);
+			else
+				newEvent = cr.insert(
+						Uri.parse("content://com.android.calendar/events"), cv);
+
+			if (newEvent != null) {
+				long id = Long.parseLong(newEvent.getLastPathSegment());
+				ContentValues values = new ContentValues();
+				values.put("event_id", id);
+				values.put("method", 1);
+				values.put("minutes", 15); // 15 minuti
+				if (Integer.parseInt(Build.VERSION.SDK) == 8)
+					cr.insert(Uri
+							.parse("content://com.android.calendar/reminders"),
+							values);
+				else
+					cr.insert(Uri.parse("content://calendar/reminders"), values);
+
+			}
+			// dialog.cancel();
+			// }
+			//
+			// });
+
+			// builder.create().show();
+		}
+		cursor.close();
 	}
 
 }

@@ -2,7 +2,7 @@
     android:id="@+id/donationPlaceItem"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="#cccccc"
+    android:background="#D4D0C8"
     android:padding="10dp" >
 
     <LinearLayout
@@ -61,6 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="3dp"
+                android:textSize="12sp"
                 android:text="werwerw" />
 
             <TextView
@@ -69,6 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="3dp"
+                 android:textSize="12sp"
                 android:text="werwerw" />
         </LinearLayout>
     </LinearLayout>

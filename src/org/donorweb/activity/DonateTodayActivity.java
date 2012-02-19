@@ -30,7 +30,7 @@ public class DonateTodayActivity extends AbstractDonateBloodActivity {
 		mTextview = (TextView) findViewById(R.id.next_blood_donate_date);
 
 		String donatedDate = Utils.getStringPreference(this,
-				Constants.BLOOD_DONATED_DATE);
+				Constants.NEXT_BLOOD_DONATION_DATE);
 
 		Log.d("SDFSDF", "donatedDate " + donatedDate);
 		if (donatedDate == null) {
@@ -42,8 +42,7 @@ public class DonateTodayActivity extends AbstractDonateBloodActivity {
 
 			String nextDonationDate = Utils.getStringPreference(this,
 					Constants.NEXT_BLOOD_DONATION_DATE);
-			long days = CalendarUtils.getNumberOfDaysLeft(donatedDate,
-					nextDonationDate);
+			long days = CalendarUtils.getDateDifference(nextDonationDate);
 			Log.d("SDFSDF", "remainfgin days " + days);
 
 			if (days <= 0) {
@@ -52,6 +51,7 @@ public class DonateTodayActivity extends AbstractDonateBloodActivity {
 				Utils.storeStringPreference(this, Constants.BLOOD_DONATED_DATE,
 						"");
 				mDonatedTodayButton.setEnabled(true);
+				mDonatedTodayButton.setVisibility(View.VISIBLE);
 			} else {
 				long per = days / 100L;
 				int transparency = (int) Math.ceil(per) * 100;
@@ -59,7 +59,7 @@ public class DonateTodayActivity extends AbstractDonateBloodActivity {
 						new int[] { 0xfff99900, 0xffffffff }, 0)
 						.SetTransparency(transparency));
 				mTextview.setText("You still have to wait for "
-						+ (int) Math.ceil(days) + " days");
+						+ (int) Math.ceil(days + 1) + " days");
 			}
 
 		}
@@ -69,7 +69,7 @@ public class DonateTodayActivity extends AbstractDonateBloodActivity {
 			@Override
 			public void onClick(View v) {
 				mDonatedTodayButton.setVisibility(View.GONE);
-				CalendarUtils.bloodDonatedToday(DonateTodayActivity.this);
+				CalendarUtils.addThreeMonths(DonateTodayActivity.this);
 				mOuterLayout.setBackgroundDrawable(new DrawableGradient(
 						new int[] { 0xfff99900, 0xffffffff }, 0)
 						.SetTransparency(10));

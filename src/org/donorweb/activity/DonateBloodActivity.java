@@ -27,6 +27,7 @@ public class DonateBloodActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		setTitle("Donate Blood Today");
 
 		mDonationPlaces = (ImageButton) findViewById(R.id.donationPlaces);
 
@@ -85,7 +86,7 @@ public class DonateBloodActivity extends Activity {
 
 		if (Utils.getStringPreference(this, Constants.C2DM_AUTH) == null) {
 			Log.d("Sdfsd", "registering to push");
-			// register();
+			register();
 		}
 
 	}

@@ -80,12 +80,14 @@ public class DonationPlacesAdapter extends ArrayAdapter<EventInformation> {
 		}
 		donatePlaceHolder.eventTimeText.setText(eventtime);
 		donatePlaceHolder.titleText.setText(eventTime.getTitle());
-		donatePlaceHolder.locationText.setText(eventTime.getLocation());
+		donatePlaceHolder.locationText.setText(Utils.truncate(eventTime
+				.getLocation()));
 
 		donatePlaceHolder.itemLayout.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
+
 				mActivity.startPlaceLocationActivity(eventTime);
 
 			}

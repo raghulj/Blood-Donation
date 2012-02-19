@@ -9,6 +9,7 @@ import org.donorweb.parser.EventInformationParser;
 import org.donorweb.utils.Constants;
 import org.donorweb.utils.Utils;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,7 +26,7 @@ public class DonationPlacesActivity extends AbstractDonateBloodActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.donation_placelist);
-
+		setTitle("Donation Centers");
 		mDonationPlacesListView = (ListView) findViewById(R.id.donationPlacesList);
 
 		mPlaceListAdapter = new DonationPlacesAdapter(this,
@@ -51,9 +52,13 @@ public class DonationPlacesActivity extends AbstractDonateBloodActivity {
 	class DownloadListTask extends
 			AsyncTask<Void, Void, ArrayList<EventInformation>> {
 
+		ProgressDialog progressDialog;
+
 		@Override
 		protected void onPreExecute() {
-
+			progressDialog = Utils.showProgressDialog(
+					DonationPlacesActivity.this, null, false);
+			progressDialog.show();
 		}
 
 		@Override
@@ -68,6 +73,7 @@ public class DonationPlacesActivity extends AbstractDonateBloodActivity {
 
 		@Override
 		protected void onPostExecute(ArrayList<EventInformation> response) {
+			progressDialog.dismiss();
 			if (response != null) {
 
 				for (EventInformation repo : response) {
